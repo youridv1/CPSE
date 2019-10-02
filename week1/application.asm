@@ -1,7 +1,7 @@
 .text
 .align 2
 
-str: .asciz "Hello world" @ create string
+str: .asciz "Hello world, the ANSWER is 42! @[]`{}~\n" @ create string
 
 .global application
 application:
