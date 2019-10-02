@@ -5,19 +5,19 @@
 # (c) Wouter van Ooijen (www.voti.nl) 2016
 #
 # This file is in the public domain.
-# 
+#
 #############################################################################
 
 # source files in this project (main.cpp is automatically assumed)
-SOURCES := print_asciz.asm application.asm 
+SOURCES := print_asciz.asm application.asm toggle_case.asm
 
 # header files in this project
-HEADERS := 
+HEADERS :=
 
 # other places to look for files for this project
-SEARCH  := 
+SEARCH  :=
 
-# set REATIVE to the next higher directory 
+# set REATIVE to the next higher directory
 # and defer to the Makefile.due there
 RELATIVE := $(RELATIVE)../../v2cpse1-examples/
 include $(RELATIVE)/Makefile.due
