@@ -27,7 +27,7 @@ findAndDecompress:
 
 regularChar:
 	bl handleChar	  				//go to the subroutine that handles regular characters
-	mov r0, #1			  			//index ++
+	mov r0, #1			  			//index++
 
 regularCharDone:
 	pop {r4, r5, r6, pc}		//and pop all pushed registers
@@ -48,7 +48,7 @@ printChar:
 decode:
 	ldr r0, =buffer	   			//place the buffer in r0
 	ldrb r1, [r4 , #1] 			//place the offset in r1
-	ldrb r2, [r4 , #2] 			//place the offset in r2
+	ldrb r2, [r4 , #2] 			//place the length in r2
 	mov r3, #48        			//place 48 in r3
 	sub r5, r1, r3     			//decode the offset
 	sub r6, r2, r3     			//decode the length
@@ -68,7 +68,7 @@ decodeLoopDone:
 	b regularCharDone				//and we're done
 
 bufferAddChar:
-	push { r4, lr } 				//push registers we're goning to use to the stack
+	push { r4, lr } 				//push registers we're going to use to the stack
 	mov r4, r0							//place the char in r4
 	ldr r3, =buffer					//set the buffer in r3
 	mov r1, #39         		//set the last index of the buffer in r1

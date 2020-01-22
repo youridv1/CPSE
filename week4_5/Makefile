@@ -29,8 +29,9 @@ RELATIVE := $(RELATIVE)../../v2cpse1-examples/
 lzcompressortoasm:
 	g++ generator.cpp *.hpp -o lzcompressortoasm
 
-compressed.asm: lzcompressortoasm
+compressed.asm: lzcompressortoasm wilhelmus.txt
 	./lzcompressortoasm
+
 include $(RELATIVE)Makefile.due
 
 
