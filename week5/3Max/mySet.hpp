@@ -35,7 +35,7 @@ public:
 
     bool contains(const T i){
         for( size_t j = 0; j < size; j++ ){
-            if(array[j] == i){
+            if(array[j] == i){ // if element is equal to the one required
                 return true;
             }
         }

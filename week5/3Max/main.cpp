@@ -1,6 +1,5 @@
 // Created by Youri "youridv1" de Vor
 // Licensed under the Pakken Wat Je Pakken Kan Public License
-
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
 
@@ -11,6 +10,7 @@
 
 #include "mySet.hpp"
 
+// Test if set accepts duplicates
 TEST_CASE("no duplicates") {
     mySet<int, 10> set;
     set.add(1);
@@ -25,6 +25,7 @@ TEST_CASE("no duplicates") {
     REQUIRE(ss.str() == "1 5 20 100 ");
 }
 
+// Test's what happens when trying to add too many values to the set
 TEST_CASE("max size") {
     mySet<int, 5> set;
     for (int i = 0; i < 10; i++)
@@ -34,6 +35,7 @@ TEST_CASE("max size") {
     REQUIRE(ss.str() == "0 1 2 3 4 ");
 }
 
+// Tests if removing strings works as intended
 TEST_CASE("remove string item") {
     mySet<std::string, 5> set;
     set.add("test");
@@ -46,6 +48,7 @@ TEST_CASE("remove string item") {
     REQUIRE(ss.str() == "test string ");
 }
 
+// Test if removing an int works as intended
 TEST_CASE("remove int item") {
     mySet<int, 5> set;
     for (int i = 0; i < 5; i++)
@@ -56,6 +59,7 @@ TEST_CASE("remove int item") {
     REQUIRE(ss.str() == "0 1 4 3 ");
 }
 
+// Tests if the max function returns the char with the highest value
 TEST_CASE("char max") {
     mySet<char, 10> set;
     for (int i = 0; i < 10; i++)
@@ -63,6 +67,7 @@ TEST_CASE("char max") {
     REQUIRE(set.max() == 'a' + 9); // 106 == 'j'
 }
 
+// Tests max with char arrays against the standard c++ implementation
 TEST_CASE("std::array<char, 3> max") {
     std::vector<std::array<char, 3>> items = {
         std::array<char, 3>{' ', ' ', ' '},
